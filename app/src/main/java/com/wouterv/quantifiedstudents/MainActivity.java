@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         pieChart = (PieChart) findViewById(R.id.scoreChart);
 
         ArrayList<Entry> entries = new ArrayList<>();
-        float percentage = 90f; //calculate this later
+        float percentage = 82f; //calculate this later
 
         entries.add(new Entry(percentage, 0));
         entries.add(new Entry(100-percentage, 1));

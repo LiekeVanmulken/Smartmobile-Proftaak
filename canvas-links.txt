@@ -1,0 +1,13 @@
+canvas-token :
+2464~6Km3zwWePIm6m1SMcrug5F6X7C2zyp8bBfrPmu4FSKjQvGa5SnFlCQnUrDmMFG1z
+
+working endpoints :
+
+courses :
+https://fhict.instructure.com/api/v1/courses.json?acces_token=2464~6Km3zwWePIm6m1SMcrug5F6X7C2zyp8bBfrPmu4FSKjQvGa5SnFlCQnUrDmMFG1z
+
+assignments for course : 
+https://fhict.instructure.com/api/v1/courses/1337/assignments?acces_token=2464~6Km3zwWePIm6m1SMcrug5F6X7C2zyp8bBfrPmu4FSKjQvGa5SnFlCQnUrDmMFG1z
+
+getting own data
+https://fhict.instructure.com/api/v1/users/self?acces_token=2464~6Km3zwWePIm6m1SMcrug5F6X7C2zyp8bBfrPmu4FSKjQvGa5SnFlCQnUrDmMFG1z
