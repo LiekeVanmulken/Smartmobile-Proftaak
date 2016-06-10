@@ -10,9 +10,11 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
+import com.wouterv.quantifiedstudents.canvasmodels.Config;
+import com.wouterv.quantifiedstudents.canvasmodels.Course;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         makePieChart();
+        JsonHandler j = new JsonHandler();
+        j.getJSON("https://fhict.instructure.com/api/v1/courses.json?acces_token="+ Config.canvasAPIKey,this, JsonHandler.Mode.Courses);
     }
     public void makePieChart(){
         pieChart = (PieChart) findViewById(R.id.scoreChart);
@@ -56,4 +60,5 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(this, ChartActivity.class);
         startActivity(myIntent);
     }
+
 }

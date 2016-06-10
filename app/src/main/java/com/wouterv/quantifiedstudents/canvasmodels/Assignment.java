@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by wouter on 27-5-2016.
@@ -26,6 +27,7 @@ public class Assignment {
     boolean hasSubmittedSubmissions;
     String htmlUrl;
     String submissionsDownloadUrl;
+    List<Submission> submissions;
 
     public int getId() {
         return id;

@@ -4,10 +4,24 @@ canvas-token :
 working endpoints :
 
 courses :
-https://fhict.instructure.com/api/v1/courses.json?acces_token=2464~6Km3zwWePIm6m1SMcrug5F6X7C2zyp8bBfrPmu4FSKjQvGa5SnFlCQnUrDmMFG1z
+https://fhict.instructure.com/api/v1/courses.json
 
 assignments for course : 
-https://fhict.instructure.com/api/v1/courses/1337/assignments?acces_token=2464~6Km3zwWePIm6m1SMcrug5F6X7C2zyp8bBfrPmu4FSKjQvGa5SnFlCQnUrDmMFG1z
+https://fhict.instructure.com/api/v1/courses/:course_id/assignments
+ex : https://fhict.instructure.com/api/v1/courses/1337/assignments
+* add bucket variable to narrow this down - possible values: past, overdue, undated, ungraded, upcoming, future *
 
 getting own data
-https://fhict.instructure.com/api/v1/users/self?acces_token=2464~6Km3zwWePIm6m1SMcrug5F6X7C2zyp8bBfrPmu4FSKjQvGa5SnFlCQnUrDmMFG1z
+https://fhict.instructure.com/api/v1/users/self
+
+getting submissions for assignment
+https://fhict.instructure.com/api/v1/courses/:course_id/assignments/:assignment_id/submissions/self
+https://fhict.instructure.com/api/v1/courses/1460/assignments/18858/submissions/self
+
+quiz 
+https://fhict.instructure.com/api/v1/courses/:course_id/quizzes/:quiz_id
+ex :https://fhict.instructure.com/api/v1/courses/1460/quizzes/1743
+
+submission for quizes
+https://fhict.instructure.com/api/v1/courses/:course_ide/quizzes/:quiz_id/submissions/self
+ex: https://fhict.instructure.com/api/v1/courses/1460/quizzes/1743/submissions/self
