@@ -89,25 +89,6 @@ public class Assignment {
         return submissionsDownloadUrl;
     }
 
-    public Assignment(int id, String description, Date dueAt, int pointsPossible, String gradingType, int assigmentGroupId, Date createdAt, Date updatedAt, int position, int groupCategoryId, int courseId, String name, boolean hasSubmittedSubmissions, String htmlUrl, String submissionsDownloadUrl) {
-
-        this.id = id;
-        this.description = description;
-        this.dueAt = dueAt;
-        this.pointsPossible = pointsPossible;
-        this.gradingType = gradingType;
-        this.assigmentGroupId = assigmentGroupId;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.position = position;
-        this.groupCategoryId = groupCategoryId;
-        this.courseId = courseId;
-        this.name = name;
-        this.hasSubmittedSubmissions = hasSubmittedSubmissions;
-        this.htmlUrl = htmlUrl;
-        this.submissionsDownloadUrl = submissionsDownloadUrl;
-    }
-
     public Assignment(JSONObject response) throws JSONException, ParseException {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         this.id = response.getInt("id");
