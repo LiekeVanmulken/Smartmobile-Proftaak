@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">quantifiedstudents</string>
-
+    <string name="steps">Steps</string>
+    <string name="sleep">Sleep</string>
 </resources>
