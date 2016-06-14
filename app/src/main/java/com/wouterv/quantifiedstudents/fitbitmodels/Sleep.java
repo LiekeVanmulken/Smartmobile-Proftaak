@@ -47,7 +47,7 @@ public class Sleep {
     }
 
     public Sleep(JSONObject response) throws JSONException, ParseException {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         this.isMainSleep = response.getBoolean("isMainSleep");
         this.logId = response.getInt("logId");
         this.efficiency = response.getInt("efficiency");
