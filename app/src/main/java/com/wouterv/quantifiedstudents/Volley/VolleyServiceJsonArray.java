@@ -2,6 +2,7 @@ package com.wouterv.quantifiedstudents.Volley;
 
 import android.content.Context;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -9,13 +10,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.wouterv.quantifiedstudents.canvasmodels.Config;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Class for making GET or POST calls with Volley and returning a JSONArray
- *
+ * <p/>
  * copy pasted from sander-VolleyService on 10-6-2016.
  */
 public class VolleyServiceJsonArray {
@@ -26,9 +31,8 @@ public class VolleyServiceJsonArray {
     private RequestQueue requestQueue;
 
     /**
-     *
      * @param resultCallback the IResult implementation
-     * @param context the current activity context
+     * @param context        the current activity context
      */
     public VolleyServiceJsonArray(IResultJsonArray resultCallback, Context context) {
         this.resultCallback = resultCallback;
@@ -38,7 +42,8 @@ public class VolleyServiceJsonArray {
 
     /**
      * Make a POST request
-     * @param url the url of the api
+     *
+     * @param url        the url of the api
      * @param jsonObject optional jsonObject to be send with the request
      */
     public void requestAccessToken(String url, JSONArray jsonArray, final String code) {
@@ -48,12 +53,31 @@ public class VolleyServiceJsonArray {
 
     /**
      * Make a GET request
-     * @param url the url of the api
+     *
+     * @param url        the url of the api
      * @param jsonObject optional jsonObject to be send with the request
      */
     public void getDataVolley(String url, JSONArray jsonArray) {
         requestType = "GETCALL";
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, jsonArray, successListener, errorListener);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, jsonArray, successListener, errorListener) {
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> params = super.getParams();
+//                if(params== null){
+//                    params = new HashMap<>();
+//                }
+//                params.put("Authorization","Bearer "+ Config.getInstance().getAccess_token());
+//                return params;
+//            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> headers = new HashMap<>();
+//                headers.put("Content-Type","application/x-www-form-urlencoded");
+                headers.put("Authorization","Bearer "+ Config.getInstance().getAccess_token());
+                return headers;
+            }
+        };
         requestQueue.add(jsonArrayRequest);
     }
 
@@ -72,7 +96,7 @@ public class VolleyServiceJsonArray {
      */
     private Response.ErrorListener errorListener = new Response.ErrorListener() {
         @Override
-        public  void onErrorResponse(VolleyError error) {
+        public void onErrorResponse(VolleyError error) {
             resultCallback.notifyError(requestType, error);
         }
     };

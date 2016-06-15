@@ -25,9 +25,9 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fhictapiresponse);
-        Log.d("aaa", "fuuuuuuck1");
+//        Log.d("aaa", "fuuuuuuck1");
         String access_token = getAccesTokenFromString(getIntent().getData().toString());
-
+        Log.d("access_token",access_token);
 //        ((TextView) findViewById(R.id.acces_token)).setText(link);
         Config.getInstance().setAccess_token(access_token);
         IResultJsonArray resultCallback = new IResultJsonArray() {
@@ -50,8 +50,10 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                 Log.d("aaa","fuuuuuuck2");
                 error.printStackTrace();
             }
+
+
         };
-        new VolleyServiceJsonArray(resultCallback,getApplicationContext()).getDataVolley(String.format(getString(R.string.course_list), access_token), null);
+        new VolleyServiceJsonArray(resultCallback,getApplicationContext()).getDataVolley(getString(R.string.course_list), null);
 
 //        new JsonHandler().getJSON("https://api.fhict.nl/Canvas/Courses/me", link, this, JsonHandler.Mode.Courses);
     }

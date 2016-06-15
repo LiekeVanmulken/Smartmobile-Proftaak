@@ -61,13 +61,13 @@ public class Course {
             }
             @Override
             public void notifyError(String requestType, VolleyError error) {
-
+                error.printStackTrace();
             }
         };
         new VolleyServiceJsonArray(i,context).
                 getDataVolley(
                         String.format(
-                                context.getString(R.string.assignments_by_course_id),id,Config.getInstance().getAccess_token()
+                                context.getString(R.string.assignments_by_course_id),id
                         )
                         , null);
     }

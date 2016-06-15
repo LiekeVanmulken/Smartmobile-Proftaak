@@ -1,5 +1,6 @@
 package com.wouterv.quantifiedstudents.canvasmodels;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -89,22 +90,45 @@ public class Assignment {
         return submissionsDownloadUrl;
     }
 
+//    public Assignment(JSONObject response) throws JSONException, ParseException {
+//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+//        this.id = response.getInt("id");
+//        this.description = response.getString("description");
+//        this.dueAt = format.parse(response.getString("due_at"));
+//        this.pointsPossible = response.getInt("points_possible");
+//        this.gradingType = response.getString("grading_type");
+//        this.assigmentGroupId = response.getInt("assignment_group_id");
+//        this.createdAt = format.parse(response.getString("created_at"));
+//        this.updatedAt = format.parse(response.getString("updated_at"));
+//        this.position = response.getInt("position");
+//        this.groupCategoryId = response.getInt("group_category_id");
+//        this.courseId = response.getInt("course_id");
+//        this.name = response.getString("name");
+//        this.hasSubmittedSubmissions = response.getBoolean("has_submitted_submissions");
+//        this.htmlUrl = response.getString("html_url");
+//        this.submissionsDownloadUrl = response.getString("submissions_download_url");
+//    }
     public Assignment(JSONObject response) throws JSONException, ParseException {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-        this.id = response.getInt("id");
-        this.description = response.getString("description");
-        this.dueAt = format.parse(response.getString("due_at"));
-        this.pointsPossible = response.getInt("points_possible");
-        this.gradingType = response.getString("grading_type");
-        this.assigmentGroupId = response.getInt("assignment_group_id");
-        this.createdAt = format.parse(response.getString("created_at"));
-        this.updatedAt = format.parse(response.getString("updated_at"));
-        this.position = response.getInt("position");
-        this.groupCategoryId = response.getInt("group_category_id");
-        this.courseId = response.getInt("course_id");
-        this.name = response.getString("name");
-        this.hasSubmittedSubmissions = response.getBoolean("has_submitted_submissions");
-        this.htmlUrl = response.getString("html_url");
-        this.submissionsDownloadUrl = response.getString("submissions_download_url");
+        if(response.has("points_possible") && response.has("grading_type") &&response.getString("grading_type")=="points") {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+            this.id = response.getInt("id");
+            this.description = response.getString("description");
+            this.dueAt = format.parse(response.getString("due_at"));
+            this.pointsPossible = response.getInt("points_possible");
+            this.gradingType = response.getString("grading_type");
+//            this.assigmentGroupId = response.getInt("assignment_group_id");
+            this.createdAt = format.parse(response.getString("created_at"));
+            this.updatedAt = format.parse(response.getString("updated_at"));
+//            this.position = response.getInt("position");
+//            this.groupCategoryId = response.getInt("group_category_id");
+            this.courseId = response.getInt("course_id");
+            this.name = response.getString("name");
+            this.hasSubmittedSubmissions = response.getBoolean("has_submitted_submissions");
+            if(hasSubmittedSubmissions){
+                JSONObject submisssion = response.getJSONObject("submission");
+            }
+//            this.htmlUrl = response.getString("html_url");
+            this.submissionsDownloadUrl = response.getString("submissions_download_url");
+        }
     }
 }
