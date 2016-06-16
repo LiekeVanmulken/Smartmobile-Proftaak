@@ -10,5 +10,5 @@
     tools:context="com.wouterv.quantifiedstudents.Activity.FHICTAPIResponseActivity">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" android:text="api response"/>
+        android:layout_height="match_parent" android:text="Loading..."/>
 </LinearLayout>

@@ -46,8 +46,13 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                     }
                 }
                 Config.getInstance().setCourses(courseList);
-                Log.d("aaa",courseList.toString());
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                Log.d("aaa", courseList.toString());
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
             }
 
