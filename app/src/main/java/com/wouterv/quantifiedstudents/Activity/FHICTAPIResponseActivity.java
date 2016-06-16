@@ -1,5 +1,6 @@
 package com.wouterv.quantifiedstudents.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,7 +43,10 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+                Config.getInstance().setCourses(courseList);
                 Log.d("aaa",courseList.toString());
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
             }
 
             @Override

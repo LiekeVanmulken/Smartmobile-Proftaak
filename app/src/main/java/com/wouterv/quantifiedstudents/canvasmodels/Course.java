@@ -1,6 +1,7 @@
 package com.wouterv.quantifiedstudents.canvasmodels;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.VolleyError;
 import com.wouterv.quantifiedstudents.R;
@@ -26,6 +27,11 @@ public class Course {
     int id;
     String name;
     Date startsAt;
+
+    public List<Assignment> getAssignments() {
+        return assignments;
+    }
+
     List<Assignment> assignments;
 
     public int getId() {
@@ -58,10 +64,12 @@ public class Course {
                         e.printStackTrace();
                     }
                 }
+                Log.d("assigments added","");
             }
             @Override
             public void notifyError(String requestType, VolleyError error) {
                 error.printStackTrace();
+                Log.e("Course_notify_error",error.toString());
             }
         };
         new VolleyServiceJsonArray(i,context).

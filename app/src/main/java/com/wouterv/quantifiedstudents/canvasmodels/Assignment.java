@@ -1,5 +1,7 @@
 package com.wouterv.quantifiedstudents.canvasmodels;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,18 +19,13 @@ public class Assignment {
     String description;
     Date dueAt;
     int pointsPossible;
-    String gradingType;
-    int assigmentGroupId;
-    Date createdAt;
-    Date updatedAt;
-    int position;
-    int groupCategoryId;
     int courseId;
     String name;
-    boolean hasSubmittedSubmissions;
-    String htmlUrl;
-    String submissionsDownloadUrl;
-    List<Submission> submissions;
+
+    public Submission getSubmission() {
+        return submission;
+    }
+    Submission submission;
 
     public int getId() {
         return id;
@@ -46,89 +43,50 @@ public class Assignment {
         return pointsPossible;
     }
 
-    public String getGradingType() {
-        return gradingType;
-    }
-
-    public int getAssigmentGroupId() {
-        return assigmentGroupId;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public int getPosition() {
-        return position;
-    }
-
-    public int getGroupCategoryId() {
-        return groupCategoryId;
-    }
-
-    public int getCourseId() {
-        return courseId;
-    }
-
     public String getName() {
         return name;
     }
 
-    public boolean isHasSubmittedSubmissions() {
-        return hasSubmittedSubmissions;
-    }
-
-    public String getHtmlUrl() {
-        return htmlUrl;
-    }
-
-    public String getSubmissionsDownloadUrl() {
-        return submissionsDownloadUrl;
-    }
-
-//    public Assignment(JSONObject response) throws JSONException, ParseException {
-//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-//        this.id = response.getInt("id");
-//        this.description = response.getString("description");
-//        this.dueAt = format.parse(response.getString("due_at"));
-//        this.pointsPossible = response.getInt("points_possible");
-//        this.gradingType = response.getString("grading_type");
-//        this.assigmentGroupId = response.getInt("assignment_group_id");
-//        this.createdAt = format.parse(response.getString("created_at"));
-//        this.updatedAt = format.parse(response.getString("updated_at"));
-//        this.position = response.getInt("position");
-//        this.groupCategoryId = response.getInt("group_category_id");
-//        this.courseId = response.getInt("course_id");
-//        this.name = response.getString("name");
-//        this.hasSubmittedSubmissions = response.getBoolean("has_submitted_submissions");
-//        this.htmlUrl = response.getString("html_url");
-//        this.submissionsDownloadUrl = response.getString("submissions_download_url");
-//    }
     public Assignment(JSONObject response) throws JSONException, ParseException {
-        if(response.has("points_possible") && response.has("grading_type") &&response.getString("grading_type")=="points") {
+        if (response.has("points_possible")) {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+
             this.id = response.getInt("id");
-            this.description = response.getString("description");
-            this.dueAt = format.parse(response.getString("due_at"));
-            this.pointsPossible = response.getInt("points_possible");
-            this.gradingType = response.getString("grading_type");
-//            this.assigmentGroupId = response.getInt("assignment_group_id");
-            this.createdAt = format.parse(response.getString("created_at"));
-            this.updatedAt = format.parse(response.getString("updated_at"));
-//            this.position = response.getInt("position");
-//            this.groupCategoryId = response.getInt("group_category_id");
-            this.courseId = response.getInt("course_id");
-            this.name = response.getString("name");
-            this.hasSubmittedSubmissions = response.getBoolean("has_submitted_submissions");
-            if(hasSubmittedSubmissions){
-                JSONObject submisssion = response.getJSONObject("submission");
+            if (response.has("description"))
+                this.description = response.getString("description");
+            if (response.has("name"))
+                this.name = response.getString("name");
+            if (response.has("due_at")) {
+                this.dueAt = format.parse(response.getString("due_at"));
             }
-//            this.htmlUrl = response.getString("html_url");
-            this.submissionsDownloadUrl = response.getString("submissions_download_url");
+//            if(response.has("points_possible")) {
+            this.pointsPossible = response.getInt("points_possible");
+            if (response.has("course_id"))
+                this.courseId = response.getInt("course_id");
+//            this.hasSubmittedSubmissions = response.getBoolean("has_submitted_submissions");
+            if (response.has("submission")) {
+                JSONObject submisssion = response.getJSONObject("submission");
+                int id = submisssion.getInt("id");
+
+                int score = -1;
+                String grade = "";
+                if (submisssion.has("score")) {
+                    score = submisssion.getInt("score");//might also need to add grade
+                }
+                if(submisssion.has("score")){
+                    grade = submisssion.getString("grade");
+                }
+                Date submittedAt = null;
+                if(submisssion.has("submitted_at"))submittedAt = format.parse(submisssion.getString("submitted_at"));
+                else if(submisssion.has("graded_at")) submittedAt = format.parse(submisssion.getString("graded_at"));
+                if(submittedAt == null){
+                    Log.e("submittedat is null on",this.getName() );
+                }
+                boolean late = false;
+                if (submisssion.has("late")) late = submisssion.getBoolean("late");
+                this.submission = new Submission(id, score, grade, pointsPossible, submittedAt, late);
+            }
+//        }
         }
     }
 }
