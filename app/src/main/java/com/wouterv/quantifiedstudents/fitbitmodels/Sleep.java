@@ -33,8 +33,6 @@ public class Sleep {
         this.minutesAwake = response.getInt("minutesAwake");
         this.numberOfAwakenings = response.getInt("minutesAwake");
         this.timeInBed = response.getInt("timeInBed");
-
-
     }
 
     public Date getDate() {
