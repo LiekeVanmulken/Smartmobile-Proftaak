@@ -15,7 +15,7 @@ public class Activity {
     private Date date;
     private int caloriesBurned;
     private int steps;
-    private double disdtance;
+    private double distance;
     private int floors;
     private int minutesSedentary;
     private int minutesLightlyActive;
@@ -23,11 +23,11 @@ public class Activity {
     private int minutesVeryActive;
     private int activityCalories;
 
-    public Activity(Date date, int caloriesBurned, int steps, double disdtance, int floors, int minutesSedentary, int minutesLightlyActive, int minutesFairlyActive, int minutesVeryActive, int activityCalories) {
+    public Activity(Date date, int caloriesBurned, int steps, double distance, int floors, int minutesSedentary, int minutesLightlyActive, int minutesFairlyActive, int minutesVeryActive, int activityCalories) {
         this.date = date;
         this.caloriesBurned = caloriesBurned;
         this.steps = steps;
-        this.disdtance = disdtance;
+        this.distance = distance;
         this.floors = floors;
         this.minutesSedentary = minutesSedentary;
         this.minutesLightlyActive = minutesLightlyActive;
@@ -41,7 +41,7 @@ public class Activity {
         this.date = format.parse(response.getString("date"));
         this.caloriesBurned = response.getInt("caloriesBurned");
         this.steps = response.getInt("steps");
-        this.disdtance = response.getDouble("distance");
+        this.distance = response.getDouble("distance");
         this.floors = response.getInt("floors");
         this.minutesSedentary = response.getInt("minutesSedentary");
         this.minutesLightlyActive = response.getInt("minutesLightlyActive");
@@ -66,8 +66,8 @@ public class Activity {
         return steps;
     }
 
-    public double getDisdtance() {
-        return disdtance;
+    public double getDistance() {
+        return distance;
     }
 
     public int getFloors() {
