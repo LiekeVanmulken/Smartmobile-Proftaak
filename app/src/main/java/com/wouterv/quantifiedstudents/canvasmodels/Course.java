@@ -1,5 +1,16 @@
 package com.wouterv.quantifiedstudents.canvasmodels;
 
+import android.content.Context;
+import android.util.Log;
+
+import com.android.volley.VolleyError;
+import com.wouterv.quantifiedstudents.R;
+import com.wouterv.quantifiedstudents.Volley.IResult;
+import com.wouterv.quantifiedstudents.Volley.IResultJsonArray;
+import com.wouterv.quantifiedstudents.Volley.VolleyService;
+import com.wouterv.quantifiedstudents.Volley.VolleyServiceJsonArray;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,6 +27,11 @@ public class Course {
     int id;
     String name;
     Date startsAt;
+
+    public List<Assignment> getAssignments() {
+        return assignments;
+    }
+
     List<Assignment> assignments;
 
     public int getId() {
@@ -31,10 +47,36 @@ public class Course {
         return startsAt;
     }
 
-    public Course(JSONObject response) throws JSONException, ParseException {
+    public Course(JSONObject response, Context context) throws JSONException, ParseException {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         this.id = response.getInt("id");
         this.name = response.getString("name");
         this.startsAt = format.parse(response.getString("start_at"));
+
+        IResultJsonArray i = new IResultJsonArray() {
+            @Override
+            public void notifySuccess(String requestType, JSONArray response) {
+                assignments = new ArrayList<>();
+                for(int i =0; i<response.length();i++ ){
+                    try {
+                        assignments.add(new Assignment(response.getJSONObject(i)));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                Log.d("assigments added","");
+            }
+            @Override
+            public void notifyError(String requestType, VolleyError error) {
+                error.printStackTrace();
+                Log.e("Course_notify_error",error.toString());
+            }
+        };
+        new VolleyServiceJsonArray(i,context).
+                getDataVolley(
+                        String.format(
+                                context.getString(R.string.assignments_by_course_id),id
+                        )
+                        , null);
     }
 }

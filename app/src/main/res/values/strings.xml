@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">quantifiedstudents</string>
-
+    <string name="course_list">https://api.fhict.nl/Canvas/Courses/me</string>
+    <string name="assignments_by_course_id">https://api.fhict.nl/Canvas/Course/%1$s/assignments</string>
 </resources>
