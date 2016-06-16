@@ -4,16 +4,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.android.volley.VolleyError;
-import com.wouterv.quantifiedstudents.Volley.IResult;
-import com.wouterv.quantifiedstudents.Volley.VolleyService;
+import com.wouterv.quantifiedstudents.Volley.IResultFitbit;
+import com.wouterv.quantifiedstudents.Volley.VolleyServiceFitbit;
+import com.wouterv.quantifiedstudents.fitbitmodels.Activity;
 import com.wouterv.quantifiedstudents.fitbitmodels.Sleep;
-import com.wouterv.quantifiedstudents.fitbitmodels.SleepSummary;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ServiceLoader;
 
 /**
  * Created by sander on 14-6-2016.
@@ -26,38 +28,34 @@ public class FitibitTest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fitbit);
 
-        IResult iResult = new IResult() {
+        IResultFitbit iResult = new IResultFitbit() {
             @Override
-            public void notifySuccess(String requestType, JSONObject response) {
+            public void notifySuccess(String requestType, JSONArray response) {
 
-                try {
-                    JSONArray sleep = response.getJSONArray("sleep");
+                List<Sleep> sleepList = new ArrayList<>();
 
-                    Sleep sleep1 = new Sleep(sleep.getJSONObject(0));
-                    Sleep sleep2 = new Sleep(sleep.getJSONObject(1));
-                    SleepSummary summary = new SleepSummary(response.getJSONObject("summary"));
-
-
-
-                    String test = "jajaja";
-                    test+= "asdf";
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (ParseException e) {
-                    e.printStackTrace();
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        sleepList.add(new Sleep(response.getJSONObject(i)));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
+
+
+                String test = "yaay";
             }
 
             @Override
             public void notifyError(String requestType, VolleyError error) {
-                String err = error.getMessage();
+                String test = "nooh";
             }
         };
 
-        VolleyService volleyService = new VolleyService(iResult, this);
-        volleyService.getDataVolley("http://fitbit.zlst.nl?action=getsleep", null);
+        VolleyServiceFitbit volleyService = new VolleyServiceFitbit(iResult, this);
+        volleyService.getSleep();
 
     }
 }

@@ -5,100 +5,88 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by sander on 13-6-2016.
  */
 public class Activity {
 
-    private int activityId;
-    private int activityParentId;
-    private int calories;
-    private String description;
-    private double distance;
-    private int duration;
-    private boolean hasStartTime;
-    private boolean isFavorite;
-    private int logId;
-    private String name;
-    private String startTime;
+    private Date date;
+    private int caloriesBurned;
     private int steps;
+    private double disdtance;
+    private int floors;
+    private int minutesSedentary;
+    private int minutesLightlyActive;
+    private int minutesFairlyActive;
+    private int minutesVeryActive;
+    private int activityCalories;
 
-    public Activity(int activityId, int activityParentId, int calories, String description, double distance, int duration, boolean hasStartTime, boolean isFavorite, int logId, String name, String startTime, int steps) {
-        this.activityId = activityId;
-        this.activityParentId = activityParentId;
-        this.calories = calories;
-        this.description = description;
-        this.distance = distance;
-        this.duration = duration;
-        this.hasStartTime = hasStartTime;
-        this.isFavorite = isFavorite;
-        this.logId = logId;
-        this.name = name;
-        this.startTime = startTime;
+    public Activity(Date date, int caloriesBurned, int steps, double disdtance, int floors, int minutesSedentary, int minutesLightlyActive, int minutesFairlyActive, int minutesVeryActive, int activityCalories) {
+        this.date = date;
+        this.caloriesBurned = caloriesBurned;
         this.steps = steps;
+        this.disdtance = disdtance;
+        this.floors = floors;
+        this.minutesSedentary = minutesSedentary;
+        this.minutesLightlyActive = minutesLightlyActive;
+        this.minutesFairlyActive = minutesFairlyActive;
+        this.minutesVeryActive = minutesVeryActive;
+        this.activityCalories = activityCalories;
     }
 
-    public Activity(JSONObject response) throws JSONException {
-        this.activityId = response.getInt("activityId");
-        this.activityParentId = response.getInt("activityParentId");
-        this.calories = response.getInt("calories");
-        this.description = response.getString("description");
-        this.distance = response.getDouble("distance");
-        this.duration = response.getInt("duration");
-        this.hasStartTime = response.getBoolean("hasStartTime");
-        this.isFavorite = response.getBoolean("isFavorite");
-        this.logId = response.getInt("logId");
-        this.name = response.getString("name");
-        this.startTime = response.getString("startTime");
+    public Activity(JSONObject response) throws JSONException, ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        this.date = format.parse(response.getString("date"));
+        this.caloriesBurned = response.getInt("caloriesBurned");
         this.steps = response.getInt("steps");
+        this.disdtance = response.getDouble("distance");
+        this.floors = response.getInt("floors");
+        this.minutesSedentary = response.getInt("minutesSedentary");
+        this.minutesLightlyActive = response.getInt("minutesLightlyActive");
+        this.minutesFairlyActive = response.getInt("minutesFairlyActive");
+        this.minutesVeryActive = response.getInt("minutesVeryActive");
+        this.activityCalories = response.getInt("activityCalories");
     }
 
-    public int getActivityId() {
-        return activityId;
+    public int getActivityCalories() {
+        return activityCalories;
     }
 
-    public int getActivityParentId() {
-        return activityParentId;
+    public Date getDate() {
+        return date;
     }
 
-    public int getCalories() {
-        return calories;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public double getDistance() {
-        return distance;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public boolean isHasStartTime() {
-        return hasStartTime;
-    }
-
-    public boolean isFavorite() {
-        return isFavorite;
-    }
-
-    public int getLogId() {
-        return logId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getStartTime() {
-        return startTime;
+    public int getCaloriesBurned() {
+        return caloriesBurned;
     }
 
     public int getSteps() {
         return steps;
+    }
+
+    public double getDisdtance() {
+        return disdtance;
+    }
+
+    public int getFloors() {
+        return floors;
+    }
+
+    public int getMinutesSedentary() {
+        return minutesSedentary;
+    }
+
+    public int getMinutesLightlyActive() {
+        return minutesLightlyActive;
+    }
+
+    public int getMinutesFairlyActive() {
+        return minutesFairlyActive;
+    }
+
+    public int getMinutesVeryActive() {
+        return minutesVeryActive;
     }
 }
