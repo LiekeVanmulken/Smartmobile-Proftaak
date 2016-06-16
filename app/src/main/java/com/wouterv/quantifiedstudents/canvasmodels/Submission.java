@@ -7,12 +7,12 @@ import java.util.GregorianCalendar;
  * Created by wouter on 2-6-2016.
  */
 public class Submission {
-    int id;
-    int score;
-    String grade;
-    Date submittedAt;
-    boolean late;
-    int pointsPossible;
+    private int id;
+    private int score;
+    private String grade;
+    private Date submittedAt;
+    private boolean late;
+    private int pointsPossible;
 
     public int getScore() {
         return score;

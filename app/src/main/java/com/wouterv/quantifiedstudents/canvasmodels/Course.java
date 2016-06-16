@@ -24,15 +24,15 @@ import java.util.List;
  * Created by wouter on 27-5-2016.
  */
 public class Course {
-    int id;
-    String name;
-    Date startsAt;
+   private int id;
+   private String name;
+   private Date startsAt;
 
     public List<Assignment> getAssignments() {
         return assignments;
     }
 
-    List<Assignment> assignments;
+    private List<Assignment> assignments;
 
     public int getId() {
         return id;
@@ -52,8 +52,12 @@ public class Course {
         this.id = response.getInt("id");
         this.name = response.getString("name");
         this.startsAt = format.parse(response.getString("start_at"));
+        final Course c = this;
+        final String name2 = this.name;
 
         IResultJsonArray i = new IResultJsonArray() {
+            Course course = c;
+            String name = name2;
             @Override
             public void notifySuccess(String requestType, JSONArray response) {
                 assignments = new ArrayList<>();
@@ -69,7 +73,8 @@ public class Course {
             @Override
             public void notifyError(String requestType, VolleyError error) {
                 error.printStackTrace();
-                Log.e("Course_notify_error",error.toString());
+                Log.e("Course_notify_error", error.toString());
+                Config.getInstance().removeCourseFromCourses(course);
             }
         };
         new VolleyServiceJsonArray(i,context).

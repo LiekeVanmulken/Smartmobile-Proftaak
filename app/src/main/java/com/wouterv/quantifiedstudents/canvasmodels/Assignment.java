@@ -15,17 +15,17 @@ import java.util.List;
  * Created by wouter on 27-5-2016.
  */
 public class Assignment {
-    int id;
-    String description;
-    Date dueAt;
-    int pointsPossible;
-    int courseId;
-    String name;
+    private int id;
+    private String description;
+    private Date dueAt;
+    private int pointsPossible;
+    private int courseId;
+    private String name;
 
     public Submission getSubmission() {
         return submission;
     }
-    Submission submission;
+    private Submission submission;
 
     public int getId() {
         return id;

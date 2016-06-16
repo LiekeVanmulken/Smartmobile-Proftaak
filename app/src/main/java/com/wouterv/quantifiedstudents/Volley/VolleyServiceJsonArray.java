@@ -3,6 +3,7 @@ package com.wouterv.quantifiedstudents.Volley;
 import android.content.Context;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -60,24 +61,16 @@ public class VolleyServiceJsonArray {
     public void getDataVolley(String url, JSONArray jsonArray) {
         requestType = "GETCALL";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, jsonArray, successListener, errorListener) {
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                Map<String, String> params = super.getParams();
-//                if(params== null){
-//                    params = new HashMap<>();
-//                }
-//                params.put("Authorization","Bearer "+ Config.getInstance().getAccess_token());
-//                return params;
-//            }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String,String> headers = new HashMap<>();
-//                headers.put("Content-Type","application/x-www-form-urlencoded");
                 headers.put("Authorization","Bearer "+ Config.getInstance().getAccess_token());
                 return headers;
             }
         };
+        jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(5000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(jsonArrayRequest);
     }
 

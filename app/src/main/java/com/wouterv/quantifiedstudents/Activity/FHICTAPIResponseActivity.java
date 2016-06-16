@@ -47,13 +47,38 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                 }
                 Config.getInstance().setCourses(courseList);
                 Log.d("aaa", courseList.toString());
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//                while(!Config.getInstance().hasCompletedLoading()) {
+//                    try {
+//                        Thread.sleep(5000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
 
+
+//                String testData = "";
+//                Config c = Config.getInstance();
+//
+//                for (int i = 0; i < courseList.size(); i++) {
+//                    testData += courseList.get(i).getName() + "\n";
+//
+//                    if (courseList.get(i).getAssignments() != null) {
+//                        for (int j = 0; j < c.getCourses().get(i).getAssignments().size(); j++) {
+//
+//                                Log.d("i:" + i + "; j:" + j, c.getCourses().get(i).getAssignments().get(j).getName());
+//                                testData += "\t\t" + c.getCourses().get(i).getAssignments().get(j).getName() + "\n";
+//                                if (c.getCourses().get(i).getAssignments().get(j).getSubmission() != null)
+//                                    testData += "\t\t\t\t" + c.getCourses().get(i).getAssignments().get(j).getPointsPossible() + "/" + c.getCourses().get(i).getAssignments().get(j).getSubmission().getGrade() + "/" + c.getCourses().get(i).getAssignments().get(j).getSubmission().getScore() + "\n";
+//
+//                        }
+//                    }
+//                }
+//                Log.d("tag",testData);
+//
+
+
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
 
             @Override
