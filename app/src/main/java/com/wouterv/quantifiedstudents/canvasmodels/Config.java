@@ -17,6 +17,7 @@ public class Config {
     static Config instance;
 
     public boolean hasCompletedLoading() {
+        if(courses ==null){return false;}
         for (Course c : courses) {
             if (c.getAssignments() == null) {
                 return false;

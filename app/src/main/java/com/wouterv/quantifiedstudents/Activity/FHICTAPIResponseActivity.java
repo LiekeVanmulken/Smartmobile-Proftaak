@@ -37,10 +37,10 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fhictapiresponse);
-//        Log.d("aaa", "fuuuuuuck1");
+
         String access_token = getAccesTokenFromString(getIntent().getData().toString());
         Log.d("access_token",access_token);
-//        ((TextView) findViewById(R.id.acces_token)).setText(link);
+
         Config.getInstance().setAccess_token(access_token);
         IResultJsonArray resultCallback = new IResultJsonArray() {
             @Override
@@ -55,7 +55,6 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                     }
                 }
                 Config.getInstance().setCourses(courseList);
-                Log.d("aaa", courseList.toString());
 
             }
 
