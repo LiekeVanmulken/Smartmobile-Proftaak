@@ -109,8 +109,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java">
+      <file leaf-file-name="FHICTAPIRedirectActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/FHICTAPIRedirectActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
@@ -1750,9 +1750,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_fhictapiresponse.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_fhictapiredirect.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Submission.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Assignment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Course.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Volley/VolleyServiceJsonArray.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Course.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Assignment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/FHICTAPIResponseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/Submission.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java" />
@@ -2088,6 +2089,10 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2322,6 +2327,8 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39043382" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2379,12 +2386,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/FHICTAPIResponseActivity.java</url>
-          <line>85</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/MainActivity.java</url>
           <line>34</line>
           <properties />
@@ -2397,19 +2398,13 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/FHICTAPIResponseActivity.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Course.java</url>
           <line>74</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
