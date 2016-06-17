@@ -33,14 +33,6 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
 
     private Handler handler = new Handler();
 
-
-
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,8 +57,6 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                 Config.getInstance().setCourses(courseList);
                 Log.d("aaa", courseList.toString());
 
-
-
             }
 
             @Override
@@ -88,8 +78,6 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                     finish();
                     return;
                 }
-
-
                 handler.postDelayed(this, 100);
             }
         };
