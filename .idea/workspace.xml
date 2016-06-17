@@ -49,8 +49,8 @@
       <file leaf-file-name="CanvasDataRequester.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/CanvasDataRequester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25832376">
-              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.5315729">
+              <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Assignment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="e#2561#2562#0" expanded="true" />
                 <element signature="e#2590#2591#0" expanded="true" />
@@ -1709,9 +1709,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Volley/VolleyServiceJsonArray.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Course.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Submission.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Assignment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/interfaces/fitbit/IFitbitAPIResult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/interfaces/fitbit/IAPIResult.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Assignment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/CanvasDataRequester.java" />
       </list>
     </option>
@@ -2546,10 +2546,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/interfaces/fitbit/IAPIResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Assignment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#2561#2562#0" expanded="true" />
             <element signature="e#2590#2591#0" expanded="true" />
@@ -2559,18 +2567,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/interfaces/fitbit/IAPIResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/CanvasDataRequester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25832376">
-          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.5315729">
+          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

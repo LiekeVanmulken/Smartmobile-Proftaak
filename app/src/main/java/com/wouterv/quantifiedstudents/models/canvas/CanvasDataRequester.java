@@ -64,7 +64,7 @@ public class CanvasDataRequester {
                         e.printStackTrace();
                     }
                 }
-
+                course.setAssignments(assignments);
                 callback.returnResult(assignments);
             }
 
