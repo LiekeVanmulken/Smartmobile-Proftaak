@@ -9,7 +9,7 @@ import com.wouterv.quantifiedstudents.R;
 
 public class FHICTAPIRedirectActivity extends AppCompatActivity {
 
-    String link = "http://identity.fhict.nl/connect/authorize?client_id=i311425-nyx&scope=fhict%20fhict_personal&response_type=token&redirect_uri=fhictnyx://nyxcallback";
+    String link = "https://identity.fhict.nl/connect/authorize?client_id=i311425-nyx&scope=fhict%20fhict_personal&response_type=token&redirect_uri=fhictnyx://nyxcallback";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
