@@ -29,8 +29,6 @@ import com.wouterv.quantifiedstudents.R;
 public class FHICTAPIResponseActivity extends AppCompatActivity {
 
     Config config = Config.getInstance();
-    //runs without a timer by reposting this handler at the end of the runnable
-
     private Handler handler = new Handler();
 
     @Override
@@ -55,7 +53,6 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                     }
                 }
                 Config.getInstance().setCourses(courseList);
-
             }
 
             @Override
@@ -63,8 +60,6 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                 Log.d("aaa","fuuuuuuck2");
                 error.printStackTrace();
             }
-
-
         };
         new VolleyServiceJsonArray(resultCallback,getApplicationContext()).getDataVolley(getString(R.string.course_list), null);
 
@@ -81,10 +76,6 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
             }
         };
         handler.postDelayed(timerRunnable, 1000);
-
-
-
-//        new JsonHandler().getJSON("https://api.fhict.nl/Canvas/Courses/me", link, this, JsonHandler.Mode.Courses);
     }
 
     public static String getAccesTokenFromString(String link) {
