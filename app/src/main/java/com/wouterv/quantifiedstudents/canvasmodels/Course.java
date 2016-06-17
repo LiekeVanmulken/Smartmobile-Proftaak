@@ -47,6 +47,15 @@ public class Course {
         return startsAt;
     }
 
+    public Assignment getRollCallAssignment(){
+        for(Assignment a : assignments){
+            if(a.getName().toLowerCase().contains("rollcall")){
+                return a;
+            }
+        }
+        return null;
+    }
+
     public Course(JSONObject response, Context context) throws JSONException, ParseException {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         this.id = response.getInt("id");

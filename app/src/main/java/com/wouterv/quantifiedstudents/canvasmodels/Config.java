@@ -17,7 +17,9 @@ public class Config {
     static Config instance;
 
     public boolean hasCompletedLoading() {
-        if(courses ==null){return false;}
+        if (courses == null) {
+            return false;
+        }
         for (Course c : courses) {
             if (c.getAssignments() == null) {
                 return false;
@@ -49,16 +51,15 @@ public class Config {
     }
 
     /**
-     *
      * @return all assignments with submissions
      */
-    public List<Assignment> getAssignmentsWithSubmissions(){
+    public List<Assignment> getAssignmentsWithSubmissions() {
         List<Assignment> assignments = new ArrayList<>();
         for (Course c : courses) {
             assignments.addAll(c.getAssignments());
         }
         for (Assignment a : assignments) {
-            if (a.getSubmission()==null) {
+            if (a.getSubmission() == null) {
                 assignments.remove(a);
             }
         }
@@ -66,19 +67,39 @@ public class Config {
     }
 
     /**
-     *
      * @return all assignments that use point for grading
      * also uses getAssignmentsWithSubmissions()
      */
-    public List<Assignment> getAssignmentsWithPointSubmissions(){
+    public List<Assignment> getAssignmentsWithPointSubmissions() {
         List<Assignment> assignments = getAssignmentsWithSubmissions();
-        for(Assignment a : assignments){
-            if(a.getPointsPossible()<=0){
+        for (Assignment a : assignments) {
+            if (a.getPointsPossible() <= 0) {
                 assignments.remove(a);
             }
         }
-        return  assignments;
+        return assignments;
     }
+
+    public List<Assignment> getCompletedAssignments() {
+        List<Assignment> completedAssignments = new ArrayList<>();
+        for (Course c : courses) {
+            completedAssignments.addAll(c.getAssignments());
+        }
+        for(Assignment a : completedAssignments){
+            if(a.getSubmission() == null){
+                completedAssignments.remove(a);
+                continue;
+            }
+            if(!a.getSubmission().getGrade().toLowerCase().contains("complete")){
+                completedAssignments.remove(a);
+            }
+        }
+        return completedAssignments;
+
+    }
+
+
+
 
     public void removeCourseFromCourses(Course course) {
         courses.remove(course);
@@ -91,8 +112,8 @@ public class Config {
         return instance;
     }
 
-    private List<Course> courses;
-    private String access_token;
+private List<Course> courses;
+private String access_token;
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
