@@ -6,8 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.android.volley.VolleyError;
 import com.wouterv.quantifiedstudents.Volley.IResultFitbit;
 import com.wouterv.quantifiedstudents.Volley.VolleyServiceFitbit;
-import com.wouterv.quantifiedstudents.fitbitmodels.Activity;
-import com.wouterv.quantifiedstudents.fitbitmodels.Sleep;
+import com.wouterv.quantifiedstudents.entities.fitbit.Sleep;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,7 +14,6 @@ import org.json.JSONException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ServiceLoader;
 
 /**
  * Created by sander on 14-6-2016.

@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -69,7 +70,7 @@ public class Course {
             String name = name2;
             @Override
             public void notifySuccess(String requestType, JSONArray response) {
-                assignments = new ArrayList<>();
+                assignments = Collections.synchronizedList(new ArrayList<Assignment>());
                 for(int i =0; i<response.length();i++ ){
                     try {
                         assignments.add(new Assignment(response.getJSONObject(i)));

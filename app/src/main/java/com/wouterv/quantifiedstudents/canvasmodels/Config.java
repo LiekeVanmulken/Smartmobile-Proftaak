@@ -54,7 +54,7 @@ public class Config {
      * @return all assignments with submissions
      */
     public List<Assignment> getAssignmentsWithSubmissions() {
-        List<Assignment> assignments = new ArrayList<>();
+        List<Assignment> assignments = Collections.synchronizedList(new ArrayList<Assignment>());
         for (Course c : courses) {
             assignments.addAll(c.getAssignments());
         }
