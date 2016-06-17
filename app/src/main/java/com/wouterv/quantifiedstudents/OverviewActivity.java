@@ -79,8 +79,8 @@ public class OverviewActivity extends AppCompatActivity {
             }
         });
 
-        this.canvasModel.modelAssignmentData(Config.getInstance().getAssignmentsWithSubmissions());
-        this.canvasModel.modelCourseData(Config.getInstance().getCourses());
+//        this.canvasModel.modelAssignmentData(Config.getInstance().getAssignmentsWithSubmissions());//Todo change this to new implementation
+//        this.canvasModel.modelCourseData(Config.getInstance().getCourses());//Todo change this to new implementation
     }
 
     @Override

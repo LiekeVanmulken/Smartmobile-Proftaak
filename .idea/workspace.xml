@@ -36,23 +36,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FitbitDataRequester.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/fitbit/FitbitDataRequester.java">
+      <file leaf-file-name="OverviewActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/OverviewActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="21" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
-              <folding />
+              <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
+              <folding>
+                <element signature="e#3019#3203#0" expanded="true" />
+                <element signature="e#3202#3203#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CanvasDataRequester.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CanvasDataRequester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/CanvasDataRequester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5315729">
-              <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FHICTAPIResponseActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/FHICTAPIResponseActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+              <folding>
+                <element signature="e#1472#1540#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+              <folding>
+                <element signature="e#640#641#0" expanded="true" />
+                <element signature="e#688#689#0" expanded="true" />
+                <element signature="e#727#728#0" expanded="true" />
+                <element signature="e#762#763#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,14 +123,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Course.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-              <folding>
-                <element signature="e#2739#2791#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.27784157">
+              <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1698,21 +1726,21 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/fitbit/FitbitDataRequester.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/partials/StepSmileyModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/OverviewActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/fitbit/FitbitModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/CanvasModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/entities/fitbit/canvas/MockCourse.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/MockCanvasModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/performance/PerformanceAlgorithm.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/FHICTAPIResponseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Volley/VolleyServiceJsonArray.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Course.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Submission.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/interfaces/fitbit/IFitbitAPIResult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/interfaces/fitbit/IAPIResult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Assignment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/CanvasDataRequester.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/FHICTAPIResponseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/OverviewActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Course.java" />
       </list>
     </option>
   </component>
@@ -2267,7 +2295,7 @@
           <properties />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2325,9 +2353,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
-          <folding>
-            <element signature="e#2739#2791#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2410,14 +2436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/OverviewActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/fitbit/FitbitModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2486,14 +2504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46332738">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/fitbit/FitbitDataRequester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2502,31 +2512,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/FHICTAPIResponseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25847954">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="e#2293#2324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Volley/VolleyServiceJsonArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-          <folding>
-            <element signature="e#2739#2791#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2569,11 +2559,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/CanvasDataRequester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5315729">
-          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/Activity/FHICTAPIResponseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+          <folding>
+            <element signature="e#1472#1540#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding>
+            <element signature="e#640#641#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/OverviewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
+          <folding>
+            <element signature="e#3019#3203#0" expanded="true" />
+            <element signature="e#3202#3203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27784157">
+          <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

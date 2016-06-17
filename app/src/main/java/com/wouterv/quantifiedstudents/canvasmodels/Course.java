@@ -37,45 +37,45 @@ public class Course {
         this.startsAt = format.parse(response.getString("start_at"));
     }
 
-    public Course(JSONObject response, Context context) throws JSONException, ParseException {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-        this.id = response.getInt("id");
-        this.name = response.getString("name");
-        this.startsAt = format.parse(response.getString("start_at"));
-        final Course c = this;
-        final String name2 = this.name;
-
-        IResultJsonArray i = new IResultJsonArray() {
-            Course course = c;
-            String name = name2;
-
-            @Override
-            public void notifySuccess(String requestType, JSONArray response) {
-                assignments = Collections.synchronizedList(new ArrayList<Assignment>());
-                for (int i = 0; i < response.length(); i++) {
-                    try {
-                        assignments.add(new Assignment(response.getJSONObject(i)));
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-                Log.d("assigments added", "");
-            }
-
-            @Override
-            public void notifyError(String requestType, VolleyError error) {
-                error.printStackTrace();
-                Log.e("Course_notify_error", error.toString());
-                Config.getInstance().removeCourseFromCourses(course);
-            }
-        };
-        new VolleyServiceJsonArray(i, context).
-                getDataVolley(
-                        String.format(
-                                context.getString(R.string.assignments_by_course_id), id
-                        )
-                        , null);
-    }
+//    public Course(JSONObject response, Context context) throws JSONException, ParseException {
+//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+//        this.id = response.getInt("id");
+//        this.name = response.getString("name");
+//        this.startsAt = format.parse(response.getString("start_at"));
+//        final Course c = this;
+//        final String name2 = this.name;
+//
+//        IResultJsonArray i = new IResultJsonArray() {
+//            Course course = c;
+//            String name = name2;
+//
+//            @Override
+//            public void notifySuccess(String requestType, JSONArray response) {
+//                assignments = Collections.synchronizedList(new ArrayList<Assignment>());
+//                for (int i = 0; i < response.length(); i++) {
+//                    try {
+//                        assignments.add(new Assignment(response.getJSONObject(i)),);
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                Log.d("assigments added", "");
+//            }
+//
+//            @Override
+//            public void notifyError(String requestType, VolleyError error) {
+//                error.printStackTrace();
+//                Log.e("Course_notify_error", error.toString());
+//                Config.getInstance().removeCourseFromCourses(course);
+//            }
+//        };
+//        new VolleyServiceJsonArray(i, context).
+//                getDataVolley(
+//                        String.format(
+//                                context.getString(R.string.assignments_by_course_id), id
+//                        )
+//                        , null);
+//    }
 
     public List<Assignment> getAssignments() { return assignments; }
 
