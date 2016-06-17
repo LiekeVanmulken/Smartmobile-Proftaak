@@ -1,5 +1,8 @@
 package com.wouterv.quantifiedstudents.canvasmodels;
 
+import com.wouterv.quantifiedstudents.models.canvas.Assignment;
+import com.wouterv.quantifiedstudents.models.canvas.Course;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

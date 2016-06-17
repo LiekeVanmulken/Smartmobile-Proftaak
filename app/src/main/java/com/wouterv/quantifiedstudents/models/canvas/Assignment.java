@@ -1,4 +1,4 @@
-package com.wouterv.quantifiedstudents.canvasmodels;
+package com.wouterv.quantifiedstudents.models.canvas;
 
 import android.util.Log;
 

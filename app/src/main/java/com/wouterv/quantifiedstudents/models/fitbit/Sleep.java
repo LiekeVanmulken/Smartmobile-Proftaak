@@ -1,4 +1,4 @@
-package com.wouterv.quantifiedstudents.fitbitmodels;
+package com.wouterv.quantifiedstudents.models.fitbit;
 
 import org.json.JSONException;
 import org.json.JSONObject;
