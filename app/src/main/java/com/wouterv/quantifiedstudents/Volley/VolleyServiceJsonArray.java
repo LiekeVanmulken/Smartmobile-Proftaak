@@ -10,7 +10,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
+import com.wouterv.quantifiedstudents.R;
 import com.wouterv.quantifiedstudents.canvasmodels.Config;
 
 import org.json.JSONArray;
@@ -73,6 +75,40 @@ public class VolleyServiceJsonArray {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(jsonArrayRequest);
     }
+
+    public void getCourses() {
+        requestType = "GETCALL";
+        String url = context.getString(R.string.course_list);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, successListener, errorListener) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> headers = new HashMap<>();
+                headers.put("Authorization","Bearer "+ Config.getInstance().getAccess_token());
+                return headers;
+            }
+        };
+        jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(10000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        requestQueue.add(jsonArrayRequest);
+    }
+    public void getAssignmentForCourse(int id) {
+        requestType = "GETCALL";
+        String url = String.format(context.getString(R.string.assignments_by_course_id),id+"");
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, successListener, errorListener) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> headers = new HashMap<>();
+                headers.put("Authorization","Bearer "+ Config.getInstance().getAccess_token());
+                return headers;
+            }
+        };
+        jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(10000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        requestQueue.add(jsonArrayRequest);
+    }
+
 
     /**
      * The callback for a successful request

@@ -21,7 +21,7 @@ public class Config {
             return false;
         }
         for (Course c : courses) {
-            if (c.getAssignments() == null) {
+            if (c.getAssignments() == null ) {
                 return false;
             }
         }
@@ -58,6 +58,7 @@ public class Config {
         for (Course c : courses) {
             assignments.addAll(c.getAssignments());
         }
+
         for (Assignment a : assignments) {
             if (a.getSubmission() == null) {
                 assignments.remove(a);

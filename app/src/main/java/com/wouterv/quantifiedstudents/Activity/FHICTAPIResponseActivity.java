@@ -43,7 +43,6 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
         IResultJsonArray resultCallback = new IResultJsonArray() {
             @Override
             public void notifySuccess(String requestType, JSONArray response) {
-                Log.d("aaa","fuuuuuuck1");
                 List<Course> courseList = new ArrayList<>();
                 for(int i = 0; i<response.length();i++){
                     try {

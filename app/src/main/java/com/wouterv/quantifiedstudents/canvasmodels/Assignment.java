@@ -20,10 +20,63 @@ public class Assignment {
     private String description;
     private Date dueAt;
     private int pointsPossible;
-    private int courseId;
+//    private int courseId;
     private String name;
     private Submission submission;
+    private Course course;
 
+    public Assignment(JSONObject response,Course course) throws JSONException, ParseException {
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        this.course = course;
+
+        if (response.has("points_possible")) {
+
+            this.id = response.getInt("id");
+            if (response.has("description"))
+                this.description = response.getString("description");
+            if (response.has("name"))
+                this.name = response.getString("name");
+            if (response.has("due_at")) {
+                this.dueAt = format.parse(response.getString("due_at"));
+            }
+//            if (response.has("course_id"))
+//                this.courseId = response.getInt("course_id");
+
+            this.pointsPossible = 100;
+
+
+
+            if (response.has("submission")) {
+                JSONObject submisssion = response.getJSONObject("submission");
+                int id = submisssion.getInt("id");
+
+                int score = -1;
+                String grade = "";
+
+                score = (int) (Math.random() * 50) + 50;
+                if (submisssion.has("grade")) {
+                    grade = submisssion.getString("grade");
+                }
+                Date submittedAt = null;
+                if (submisssion.has("submitted_at"))
+                    submittedAt = format.parse(submisssion.getString("submitted_at"));
+                else if (submisssion.has("graded_at"))
+                    submittedAt = format.parse(submisssion.getString("graded_at"));
+                if (submittedAt == null) {
+                    Log.e("submitted at is null on", this.getName());
+                }
+                boolean late = false;
+                if (submisssion.has("late")) late = submisssion.getBoolean("late");
+                this.submission = new Submission(id, score, grade, pointsPossible, submittedAt, late);
+            }
+        }
+    }
+
+
+    public Course getCourse() {
+        return course;
+    }
     public Submission getSubmission() {
         return submission;
     }
@@ -48,104 +101,4 @@ public class Assignment {
         return name;
     }
 
-    /**
-     * with fake data
-     * @param response
-     * @throws JSONException
-     * @throws ParseException
-     */
-    public Assignment(JSONObject response) throws JSONException, ParseException {
-        if (response.has("points_possible")) {
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-
-            this.id = response.getInt("id");
-            if (response.has("description"))
-                this.description = response.getString("description");
-            if (response.has("name"))
-                this.name = response.getString("name");
-            if (response.has("due_at")) {
-                this.dueAt = format.parse(response.getString("due_at"));
-            }
-//            if(response.has("points_possible")) {
-//            this.pointsPossible = response.getInt("points_possible");
-            this.pointsPossible = 100;
-            if (response.has("course_id"))
-                this.courseId = response.getInt("course_id");
-//            this.hasSubmittedSubmissions = response.getBoolean("has_submitted_submissions");
-            if (response.has("submission")) {
-                JSONObject submisssion = response.getJSONObject("submission");
-                int id = submisssion.getInt("id");
-
-                int score = -1;
-                String grade = "";
-//                if (submisssion.has("score")) {
-//                    score = submisssion.getInt("score");//might also need to add grade
-//                }
-                score = (int)(Math.random() * 50) + 50;
-//                Log.d("score",score+"");
-                if (submisssion.has("grade")) {
-                    grade = submisssion.getString("grade");
-                }
-                Date submittedAt = null;
-                if (submisssion.has("submitted_at"))
-                    submittedAt = format.parse(submisssion.getString("submitted_at"));
-                else if (submisssion.has("graded_at"))
-                    submittedAt = format.parse(submisssion.getString("graded_at"));
-                if (submittedAt == null) {
-                    Log.e("submitted at is null on", this.getName());
-                }
-                boolean late = false;
-                if (submisssion.has("late")) late = submisssion.getBoolean("late");
-                this.submission = new Submission(id, score, grade, pointsPossible, submittedAt, late);
-            }
-//        }
-        }
-    }
-
-
-
-//    public Assignment(JSONObject response) throws JSONException, ParseException {
-//        if (response.has("points_possible")) {
-//            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-//
-//            this.id = response.getInt("id");
-//            if (response.has("description"))
-//                this.description = response.getString("description");
-//            if (response.has("name"))
-//                this.name = response.getString("name");
-//            if (response.has("due_at")) {
-//                this.dueAt = format.parse(response.getString("due_at"));
-//            }
-////            if(response.has("points_possible")) {
-//            this.pointsPossible = response.getInt("points_possible");
-//            if (response.has("course_id"))
-//                this.courseId = response.getInt("course_id");
-////            this.hasSubmittedSubmissions = response.getBoolean("has_submitted_submissions");
-//            if (response.has("submission")) {
-//                JSONObject submisssion = response.getJSONObject("submission");
-//                int id = submisssion.getInt("id");
-//
-//                int score = -1;
-//                String grade = "";
-//                if (submisssion.has("score")) {
-//                    score = submisssion.getInt("score");//might also need to add grade
-//                }
-//                if (submisssion.has("score")) {
-//                    grade = submisssion.getString("grade");
-//                }
-//                Date submittedAt = null;
-//                if (submisssion.has("submitted_at"))
-//                    submittedAt = format.parse(submisssion.getString("submitted_at"));
-//                else if (submisssion.has("graded_at"))
-//                    submittedAt = format.parse(submisssion.getString("graded_at"));
-//                if (submittedAt == null) {
-//                    Log.e("submittedat is null on", this.getName());
-//                }
-//                boolean late = false;
-//                if (submisssion.has("late")) late = submisssion.getBoolean("late");
-//                this.submission = new Submission(id, score, grade, pointsPossible, submittedAt, late);
-//            }
-////        }
-//        }
-//    }
 }

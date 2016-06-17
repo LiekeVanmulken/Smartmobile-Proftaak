@@ -1,6 +1,5 @@
 package com.wouterv.quantifiedstudents;
 
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,7 +9,7 @@ import android.widget.TextView;
 import com.wouterv.quantifiedstudents.canvasmodels.Config;
 import com.wouterv.quantifiedstudents.entities.fitbit.Activity;
 import com.wouterv.quantifiedstudents.entities.fitbit.Sleep;
-import com.wouterv.quantifiedstudents.interfaces.fitbit.IFitbitAPIResult;
+import com.wouterv.quantifiedstudents.interfaces.fitbit.IAPIResult;
 import com.wouterv.quantifiedstudents.models.canvas.CanvasModel;
 import com.wouterv.quantifiedstudents.models.fitbit.FitbitDataRequester;
 import com.wouterv.quantifiedstudents.models.fitbit.FitbitModel;
@@ -62,7 +61,7 @@ public class OverviewActivity extends AppCompatActivity {
         this.currentSleep.setText("You have currently set " + "6821" + " steps. Keep it up!");
         this.currentSleepEmoji.setImageResource(R.drawable.happy_512px);
 
-        this.fitbitDataRequester.getActivity(this, new IFitbitAPIResult() {
+        this.fitbitDataRequester.getActivity(this, new IAPIResult() {
             @Override
             public void returnResult(Object result) {
                 fitbitModel.modelActivityData((List<Activity>) result);
@@ -73,7 +72,7 @@ public class OverviewActivity extends AppCompatActivity {
             }
         });
 
-        this.fitbitDataRequester.getSleep(this, new IFitbitAPIResult() {
+        this.fitbitDataRequester.getSleep(this, new IAPIResult() {
             @Override
             public void returnResult(Object result) {
                 fitbitModel.modelSleepData((List<Sleep>) result);

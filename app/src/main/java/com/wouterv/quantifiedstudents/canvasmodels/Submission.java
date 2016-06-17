@@ -14,6 +14,15 @@ public class Submission {
     private boolean late;
     private int pointsPossible;
 
+    public Submission(int id, int score, String grade, int pointsPossible, Date submittedAt, boolean late) {
+        this.id = id;
+        this.score = score;
+        this.grade = grade;
+        this.pointsPossible = pointsPossible;
+        this.submittedAt = submittedAt;
+        this.late = late;
+    }
+
     public int getScore() {
         return score;
     }
@@ -26,24 +35,9 @@ public class Submission {
         return late;
     }
 
-    public int getPointsPossible() {
-        return pointsPossible;
-    }
+    public int getPointsPossible() { return pointsPossible; }
 
-    public Submission(int id, int score, String grade, int pointsPossible, Date submittedAt, boolean late) {
-        this.id = id;
-        this.score = score;
-        this.grade = grade;
-
-        this.pointsPossible = pointsPossible;
-        this.submittedAt = submittedAt;
-        this.late = late;
-    }
-
-    public int getId() {
-
-        return id;
-    }
+    public int getId() { return id; }
 
     public String getGrade() {
         return grade;
