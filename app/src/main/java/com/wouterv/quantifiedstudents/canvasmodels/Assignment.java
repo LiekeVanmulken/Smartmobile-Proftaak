@@ -21,11 +21,11 @@ public class Assignment {
     private int pointsPossible;
     private int courseId;
     private String name;
+    private Submission submission;
 
     public Submission getSubmission() {
         return submission;
     }
-    private Submission submission;
 
     public int getId() {
         return id;
@@ -73,14 +73,16 @@ public class Assignment {
                 if (submisssion.has("score")) {
                     score = submisssion.getInt("score");//might also need to add grade
                 }
-                if(submisssion.has("score")){
+                if (submisssion.has("score")) {
                     grade = submisssion.getString("grade");
                 }
                 Date submittedAt = null;
-                if(submisssion.has("submitted_at"))submittedAt = format.parse(submisssion.getString("submitted_at"));
-                else if(submisssion.has("graded_at")) submittedAt = format.parse(submisssion.getString("graded_at"));
-                if(submittedAt == null){
-                    Log.e("submittedat is null on",this.getName() );
+                if (submisssion.has("submitted_at"))
+                    submittedAt = format.parse(submisssion.getString("submitted_at"));
+                else if (submisssion.has("graded_at"))
+                    submittedAt = format.parse(submisssion.getString("graded_at"));
+                if (submittedAt == null) {
+                    Log.e("submittedat is null on", this.getName());
                 }
                 boolean late = false;
                 if (submisssion.has("late")) late = submisssion.getBoolean("late");

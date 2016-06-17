@@ -28,11 +28,11 @@ public class Course {
    private String name;
    private Date startsAt;
 
+    private List<Assignment> assignments;
+
     public List<Assignment> getAssignments() {
         return assignments;
     }
-
-    private List<Assignment> assignments;
 
     public int getId() {
         return id;

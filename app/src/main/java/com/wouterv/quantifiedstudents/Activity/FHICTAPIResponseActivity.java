@@ -20,9 +20,26 @@ import org.json.JSONException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+import android.os.Handler;
+
 import com.wouterv.quantifiedstudents.R;
 
 public class FHICTAPIResponseActivity extends AppCompatActivity {
+
+    Config config = Config.getInstance();
+    //runs without a timer by reposting this handler at the end of the runnable
+
+    private Handler handler = new Handler();
+
+
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,38 +64,9 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
                 }
                 Config.getInstance().setCourses(courseList);
                 Log.d("aaa", courseList.toString());
-//                while(!Config.getInstance().hasCompletedLoading()) {
-//                    try {
-//                        Thread.sleep(5000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
 
 
-//                String testData = "";
-//                Config c = Config.getInstance();
-//
-//                for (int i = 0; i < courseList.size(); i++) {
-//                    testData += courseList.get(i).getName() + "\n";
-//
-//                    if (courseList.get(i).getAssignments() != null) {
-//                        for (int j = 0; j < c.getCourses().get(i).getAssignments().size(); j++) {
-//
-//                                Log.d("i:" + i + "; j:" + j, c.getCourses().get(i).getAssignments().get(j).getName());
-//                                testData += "\t\t" + c.getCourses().get(i).getAssignments().get(j).getName() + "\n";
-//                                if (c.getCourses().get(i).getAssignments().get(j).getSubmission() != null)
-//                                    testData += "\t\t\t\t" + c.getCourses().get(i).getAssignments().get(j).getPointsPossible() + "/" + c.getCourses().get(i).getAssignments().get(j).getSubmission().getGrade() + "/" + c.getCourses().get(i).getAssignments().get(j).getSubmission().getScore() + "\n";
-//
-//                        }
-//                    }
-//                }
-//                Log.d("tag",testData);
-//
 
-
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();
             }
 
             @Override
@@ -90,6 +78,24 @@ public class FHICTAPIResponseActivity extends AppCompatActivity {
 
         };
         new VolleyServiceJsonArray(resultCallback,getApplicationContext()).getDataVolley(getString(R.string.course_list), null);
+
+        Runnable timerRunnable = new Runnable() {
+
+            @Override
+            public void run() {
+                if(config.hasCompletedLoading()) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+                    return;
+                }
+
+
+                handler.postDelayed(this, 100);
+            }
+        };
+        handler.postDelayed(timerRunnable, 1000);
+
+
 
 //        new JsonHandler().getJSON("https://api.fhict.nl/Canvas/Courses/me", link, this, JsonHandler.Mode.Courses);
     }
