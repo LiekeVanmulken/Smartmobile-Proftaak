@@ -5,8 +5,8 @@ import android.content.Context;
 import com.android.volley.VolleyError;
 import com.wouterv.quantifiedstudents.Volley.IResultJsonArray;
 import com.wouterv.quantifiedstudents.Volley.VolleyServiceJsonArray;
-import com.wouterv.quantifiedstudents.canvasmodels.Assignment;
-import com.wouterv.quantifiedstudents.canvasmodels.Course;
+import com.wouterv.quantifiedstudents.entities.canvas.Assignment;
+import com.wouterv.quantifiedstudents.entities.canvas.Course;
 import com.wouterv.quantifiedstudents.interfaces.fitbit.IAPIResult;
 
 import org.json.JSONArray;
@@ -49,7 +49,7 @@ public class CanvasDataRequester {
         VolleyServiceJsonArray volleyService = new VolleyServiceJsonArray(result, context);
         volleyService.getCourses();
     }
-    public void getAssignMentsForCourse(Context context, final IAPIResult callback, final Course course) {
+    public void getAssignmentsForCourse(Context context, final IAPIResult callback, final Course course) {
 
         IResultJsonArray result = new IResultJsonArray() {
             @Override

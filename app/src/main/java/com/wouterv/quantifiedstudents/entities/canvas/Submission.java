@@ -1,4 +1,4 @@
-package com.wouterv.quantifiedstudents.canvasmodels;
+package com.wouterv.quantifiedstudents.entities.canvas;
 
 import java.util.Date;
 import java.util.GregorianCalendar;

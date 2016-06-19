@@ -1,5 +1,6 @@
 package com.wouterv.quantifiedstudents.models.performance;
 
+import com.wouterv.quantifiedstudents.models.canvas.CanvasModel;
 import com.wouterv.quantifiedstudents.models.canvas.MockCanvasModel;
 import com.wouterv.quantifiedstudents.models.fitbit.FitbitModel;
 
@@ -10,12 +11,12 @@ import java.util.Map;
  * Created by Ivo on 17-6-2016.
  */
 public class PerformanceAlgorithm {
-    private MockCanvasModel canvasModel;
+    private CanvasModel canvasModel;
     private FitbitModel fitbitModel;
 
     private Date currentBestDay;
 
-    public PerformanceAlgorithm(MockCanvasModel canvasModel, FitbitModel fitbitModel) {
+    public PerformanceAlgorithm(CanvasModel canvasModel, FitbitModel fitbitModel) {
         this.canvasModel = canvasModel;
         this.fitbitModel = fitbitModel;
     }

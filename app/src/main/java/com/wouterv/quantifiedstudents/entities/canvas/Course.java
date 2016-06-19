@@ -1,23 +1,12 @@
-package com.wouterv.quantifiedstudents.canvasmodels;
+package com.wouterv.quantifiedstudents.entities.canvas;
 
-import android.content.Context;
-import android.util.Log;
+import com.wouterv.quantifiedstudents.entities.canvas.Assignment;
 
-import com.android.volley.VolleyError;
-import com.wouterv.quantifiedstudents.R;
-import com.wouterv.quantifiedstudents.Volley.IResult;
-import com.wouterv.quantifiedstudents.Volley.IResultJsonArray;
-import com.wouterv.quantifiedstudents.Volley.VolleyService;
-import com.wouterv.quantifiedstudents.Volley.VolleyServiceJsonArray;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 

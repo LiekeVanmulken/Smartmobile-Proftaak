@@ -6,20 +6,17 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.wouterv.quantifiedstudents.entities.canvas.Assignment;
+import com.wouterv.quantifiedstudents.entities.canvas.Course;
 import com.wouterv.quantifiedstudents.entities.fitbit.Activity;
 import com.wouterv.quantifiedstudents.entities.fitbit.Sleep;
-<<<<<<< HEAD
-import com.wouterv.quantifiedstudents.interfaces.fitbit.IFitbitAPIResult;
-import com.wouterv.quantifiedstudents.models.canvas.MockCanvasModel;
-=======
 import com.wouterv.quantifiedstudents.interfaces.fitbit.IAPIResult;
+import com.wouterv.quantifiedstudents.models.canvas.CanvasDataRequester;
 import com.wouterv.quantifiedstudents.models.canvas.CanvasModel;
->>>>>>> master
 import com.wouterv.quantifiedstudents.models.fitbit.FitbitDataRequester;
 import com.wouterv.quantifiedstudents.models.fitbit.FitbitModel;
 import com.wouterv.quantifiedstudents.models.performance.PerformanceAlgorithm;
 
-import java.util.Date;
 import java.util.List;
 
 public class OverviewActivity extends AppCompatActivity {
@@ -29,7 +26,9 @@ public class OverviewActivity extends AppCompatActivity {
     private TextView currentSleep;
     private ImageView currentSleepEmoji;
 
-    private MockCanvasModel canvasModel;
+    private CanvasModel canvasModel;
+
+    private CanvasDataRequester canvasDataRequester;
 
     private FitbitDataRequester fitbitDataRequester;
     private FitbitModel fitbitModel;
@@ -37,7 +36,8 @@ public class OverviewActivity extends AppCompatActivity {
     private PerformanceAlgorithm performanceAlgorithm;
 
     public OverviewActivity() {
-        this.canvasModel = new MockCanvasModel();
+        this.canvasDataRequester = new CanvasDataRequester();
+        this.canvasModel = new CanvasModel();
 
         this.fitbitDataRequester = new FitbitDataRequester();
         this.fitbitModel = new FitbitModel();
@@ -68,13 +68,7 @@ public class OverviewActivity extends AppCompatActivity {
         this.currentSleep.setText("You have currently set " + "6821" + " steps. Keep it up!");
         this.currentSleepEmoji.setImageResource(R.drawable.happy_512px);
 
-<<<<<<< HEAD
-        this.canvasModel.generateMockCourses(50);
-
-        this.fitbitDataRequester.getActivity(this, new IFitbitAPIResult() {
-=======
         this.fitbitDataRequester.getActivity(this, new IAPIResult() {
->>>>>>> master
             @Override
             public void returnResult(Object result) {
                 fitbitModel.modelActivityData((List<Activity>) result);
@@ -89,12 +83,13 @@ public class OverviewActivity extends AppCompatActivity {
                 fitbitModel.modelSleepData((List<Sleep>) result);
             }
         });
-<<<<<<< HEAD
-=======
 
-//        this.canvasModel.modelAssignmentData(Config.getInstance().getAssignmentsWithSubmissions());//Todo change this to new implementation
-//        this.canvasModel.modelCourseData(Config.getInstance().getCourses());//Todo change this to new implementation
->>>>>>> master
+        this.canvasDataRequester.getCourses(this, new IAPIResult() {
+            @Override
+            public void returnResult(Object result) {
+                canvasModel.modelCourses((List<Course>) result);
+            }
+        });
     }
 
     @Override

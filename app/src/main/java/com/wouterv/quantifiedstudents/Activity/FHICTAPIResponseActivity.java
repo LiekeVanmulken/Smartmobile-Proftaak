@@ -1,27 +1,13 @@
 package com.wouterv.quantifiedstudents.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
 
-import com.android.volley.VolleyError;
 import com.wouterv.quantifiedstudents.MainActivity;
-import com.wouterv.quantifiedstudents.Volley.IResultJsonArray;
-import com.wouterv.quantifiedstudents.Volley.VolleyServiceJsonArray;
 import com.wouterv.quantifiedstudents.canvasmodels.Config;
-import com.wouterv.quantifiedstudents.canvasmodels.Course;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 import android.os.Handler;
 
 import com.wouterv.quantifiedstudents.R;
