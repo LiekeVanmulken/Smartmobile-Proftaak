@@ -8,8 +8,13 @@ import android.widget.TextView;
 
 import com.wouterv.quantifiedstudents.entities.fitbit.Activity;
 import com.wouterv.quantifiedstudents.entities.fitbit.Sleep;
+<<<<<<< HEAD
 import com.wouterv.quantifiedstudents.interfaces.fitbit.IFitbitAPIResult;
 import com.wouterv.quantifiedstudents.models.canvas.MockCanvasModel;
+=======
+import com.wouterv.quantifiedstudents.interfaces.fitbit.IAPIResult;
+import com.wouterv.quantifiedstudents.models.canvas.CanvasModel;
+>>>>>>> master
 import com.wouterv.quantifiedstudents.models.fitbit.FitbitDataRequester;
 import com.wouterv.quantifiedstudents.models.fitbit.FitbitModel;
 import com.wouterv.quantifiedstudents.models.performance.PerformanceAlgorithm;
@@ -63,9 +68,13 @@ public class OverviewActivity extends AppCompatActivity {
         this.currentSleep.setText("You have currently set " + "6821" + " steps. Keep it up!");
         this.currentSleepEmoji.setImageResource(R.drawable.happy_512px);
 
+<<<<<<< HEAD
         this.canvasModel.generateMockCourses(50);
 
         this.fitbitDataRequester.getActivity(this, new IFitbitAPIResult() {
+=======
+        this.fitbitDataRequester.getActivity(this, new IAPIResult() {
+>>>>>>> master
             @Override
             public void returnResult(Object result) {
                 fitbitModel.modelActivityData((List<Activity>) result);
@@ -74,12 +83,18 @@ public class OverviewActivity extends AppCompatActivity {
             }
         });
 
-        this.fitbitDataRequester.getSleep(this, new IFitbitAPIResult() {
+        this.fitbitDataRequester.getSleep(this, new IAPIResult() {
             @Override
             public void returnResult(Object result) {
                 fitbitModel.modelSleepData((List<Sleep>) result);
             }
         });
+<<<<<<< HEAD
+=======
+
+//        this.canvasModel.modelAssignmentData(Config.getInstance().getAssignmentsWithSubmissions());//Todo change this to new implementation
+//        this.canvasModel.modelCourseData(Config.getInstance().getCourses());//Todo change this to new implementation
+>>>>>>> master
     }
 
     @Override

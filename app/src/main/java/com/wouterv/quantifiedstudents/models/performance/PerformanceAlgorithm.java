@@ -21,6 +21,7 @@ public class PerformanceAlgorithm {
     }
 
     public void calculateBestDay() {
-
+//        for (Map.Entry<Date, Submission> submission : this.canvasModel.getSubmissions().entrySet())
+//            System.out.println(submission);
     }
 }

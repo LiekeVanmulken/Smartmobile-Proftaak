@@ -7,7 +7,7 @@ import com.wouterv.quantifiedstudents.Volley.IResultFitbit;
 import com.wouterv.quantifiedstudents.Volley.VolleyServiceFitbit;
 import com.wouterv.quantifiedstudents.entities.fitbit.Activity;
 import com.wouterv.quantifiedstudents.entities.fitbit.Sleep;
-import com.wouterv.quantifiedstudents.interfaces.fitbit.IFitbitAPIResult;
+import com.wouterv.quantifiedstudents.interfaces.fitbit.IAPIResult;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,7 +20,7 @@ import java.util.List;
  * Created by Ivo on 17-6-2016.
  */
 public class FitbitDataRequester {
-    public void getSleep(Context context, final IFitbitAPIResult callback) {
+    public void getSleep(Context context, final IAPIResult callback) {
         IResultFitbit result = new IResultFitbit() {
             @Override
             public void notifySuccess(String requestType, JSONArray response) {
@@ -48,7 +48,7 @@ public class FitbitDataRequester {
         volleyService.getSleep();
     }
 
-    public void getActivity(Context context, final IFitbitAPIResult callback) {
+    public void getActivity(Context context, final IAPIResult callback) {
         IResultFitbit result = new IResultFitbit() {
             @Override
             public void notifySuccess(String requestType, JSONArray response) {
