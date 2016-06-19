@@ -8,9 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6b14e06b-2181-49e0-93b2-3e337583e18e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/entities/canvas/Assignment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/entities/canvas/Assignment.java" />
+<<<<<<< Updated upstream
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/canvasmodels/Config.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/entities/canvas/Course.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/entities/canvas/Course.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+>>>>>>> Stashed changes
     </list>
     <ignored path="Smartmobile-Proftaak.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,8 +100,13 @@
       <file leaf-file-name="CanvasModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/CanvasModel.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state vertical-scroll-proportion="0.0">
               <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+=======
+            <state vertical-scroll-proportion="0.6883436">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1721,10 +1729,17 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< Updated upstream
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+=======
+    <option name="x" value="872" />
+    <option name="y" value="115" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2226,7 +2241,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+=======
+    <frame x="872" y="115" width="1400" height="1000" extended-state="0" />
+>>>>>>> Stashed changes
     <editor active="true" />
     <layout>
       <window_info id="Android WiFi ADB" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2441,8 +2460,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/wouterv/quantifiedstudents/models/canvas/CanvasModel.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+=======
+        <state vertical-scroll-proportion="0.6883436">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

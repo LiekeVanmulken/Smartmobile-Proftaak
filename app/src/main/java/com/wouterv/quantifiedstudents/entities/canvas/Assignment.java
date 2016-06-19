@@ -2,17 +2,18 @@ package com.wouterv.quantifiedstudents.entities.canvas;
 
 import android.util.Log;
 
+<<<<<<< Updated upstream
 
 
 import org.json.JSONArray;
+=======
+>>>>>>> Stashed changes
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.Random;
 
 /**
  * Created by wouter on 27-5-2016.
