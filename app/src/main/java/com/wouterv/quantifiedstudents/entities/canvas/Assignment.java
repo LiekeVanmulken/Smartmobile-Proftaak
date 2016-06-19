@@ -2,8 +2,7 @@ package com.wouterv.quantifiedstudents.entities.canvas;
 
 import android.util.Log;
 
-import com.wouterv.quantifiedstudents.canvasmodels.Course;
-import com.wouterv.quantifiedstudents.canvasmodels.Submission;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;

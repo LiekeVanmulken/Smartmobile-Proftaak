@@ -1,5 +1,6 @@
 package com.wouterv.quantifiedstudents.entities.canvas;
 
+import com.wouterv.quantifiedstudents.canvasmodels.Config;
 import com.wouterv.quantifiedstudents.entities.canvas.Assignment;
 
 import org.json.JSONException;
@@ -18,12 +19,14 @@ public class Course {
     private String name;
     private Date startsAt;
     private List<Assignment> assignments;
+    private int point;
 
     public Course(JSONObject response) throws JSONException, ParseException {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         this.id = response.getInt("id");
         this.name = response.getString("name");
         this.startsAt = format.parse(response.getString("start_at"));
+        this.point = (int) (Math.random() * 10) + 90;
     }
 
 //    public Course(JSONObject response, Context context) throws JSONException, ParseException {
@@ -70,9 +73,7 @@ public class Course {
 
     public void setAssignments(List<Assignment> assignments) { this.assignments = assignments; }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
     public String getName() {
         return name;
@@ -81,6 +82,8 @@ public class Course {
     public Date getStartsAt() {
         return startsAt;
     }
+
+    public double getPoint() { return point; }
 
     public Assignment getRollCallAssignment() {
         for (Assignment a : assignments) {
