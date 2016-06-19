@@ -3,21 +3,22 @@ package com.wouterv.quantifiedstudents.models.fitbit;
 import com.wouterv.quantifiedstudents.entities.fitbit.Activity;
 import com.wouterv.quantifiedstudents.entities.fitbit.Sleep;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Ivo on 17-6-2016.
  */
 public class FitbitModel {
-    private final HashMap<Date, Activity> activity;
-    private final HashMap<Date, Sleep> sleep;
+    private final Map<Date, Activity> activity;
+    private final Map<Date, Sleep> sleep;
 
     public FitbitModel() {
-        this.activity = new HashMap<>();
-        this.sleep = new HashMap<>();
+        this.activity = Collections.synchronizedMap(new HashMap<Date, Activity>());
+        this.sleep = Collections.synchronizedMap(new HashMap<Date, Sleep>());
     }
 
     public Activity getActivity(Date date) {

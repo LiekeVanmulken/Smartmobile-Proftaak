@@ -1,4 +1,4 @@
-package com.wouterv.quantifiedstudents.entities.fitbit.canvas;
+package com.wouterv.quantifiedstudents.entities.canvas;
 
 import java.util.Date;
 
