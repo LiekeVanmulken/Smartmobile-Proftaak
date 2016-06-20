@@ -21,6 +21,14 @@ public class CanvasModel {
         this.courses = Collections.synchronizedMap(new HashMap<Date, Course>());
     }
 
+    public Map<Date, Assignment> getAssignments() {
+        return Collections.unmodifiableMap(this.assignments);
+    }
+
+    public Map<Date, Course> getCourses() {
+        return Collections.unmodifiableMap(this.courses);
+    }
+
     public void modelAssignments(List<Assignment> assignments) {
         for (Assignment a : assignments)
             this.assignments.put(a.getSubmission().getSubmittedAt(), a);

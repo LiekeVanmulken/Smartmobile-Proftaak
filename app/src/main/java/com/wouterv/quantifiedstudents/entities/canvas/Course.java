@@ -10,6 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by wouter on 27-5-2016.
@@ -26,7 +27,7 @@ public class Course {
         this.id = response.getInt("id");
         this.name = response.getString("name");
         this.startsAt = format.parse(response.getString("start_at"));
-        this.point = (int) (Math.random() * 10) + 90;
+        this.point = new Random().nextInt(91) + 10;
     }
 
 //    public Course(JSONObject response, Context context) throws JSONException, ParseException {
@@ -83,7 +84,7 @@ public class Course {
         return startsAt;
     }
 
-    public double getPoint() { return point; }
+    public int getPoint() { return point; }
 
     public Assignment getRollCallAssignment() {
         for (Assignment a : assignments) {
