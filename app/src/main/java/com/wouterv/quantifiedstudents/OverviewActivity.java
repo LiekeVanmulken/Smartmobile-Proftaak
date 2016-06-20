@@ -71,6 +71,7 @@ public class OverviewActivity extends AppCompatActivity {
         this.fitbitDataRequester.getActivity(this, new IAPIResult() {
             @Override
             public void returnResult(Object result) {
+                performanceAlgorithm.registerDone();
                 fitbitModel.modelActivityData((List<Activity>) result);
 
                 performanceAlgorithm.calculateBestDay();
@@ -80,6 +81,7 @@ public class OverviewActivity extends AppCompatActivity {
         this.fitbitDataRequester.getSleep(this, new IAPIResult() {
             @Override
             public void returnResult(Object result) {
+                performanceAlgorithm.registerDone();
                 fitbitModel.modelSleepData((List<Sleep>) result);
             }
         });
@@ -87,6 +89,7 @@ public class OverviewActivity extends AppCompatActivity {
         this.canvasDataRequester.getCourses(this, new IAPIResult() {
             @Override
             public void returnResult(Object result) {
+                performanceAlgorithm.registerDone();
                 canvasModel.modelCourses((List<Course>) result);
             }
         });

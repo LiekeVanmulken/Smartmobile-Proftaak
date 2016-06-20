@@ -2,12 +2,7 @@ package com.wouterv.quantifiedstudents.entities.canvas;
 
 import android.util.Log;
 
-<<<<<<< Updated upstream
-
-
 import org.json.JSONArray;
-=======
->>>>>>> Stashed changes
 import org.json.JSONException;
 import org.json.JSONObject;
 

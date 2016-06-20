@@ -14,15 +14,26 @@ public class PerformanceAlgorithm {
     private CanvasModel canvasModel;
     private FitbitModel fitbitModel;
 
+    private int requestsBusy;
+
     private Date currentBestDay;
 
     public PerformanceAlgorithm(CanvasModel canvasModel, FitbitModel fitbitModel) {
         this.canvasModel = canvasModel;
         this.fitbitModel = fitbitModel;
+
+        this.requestsBusy = 3;
     }
 
     public void calculateBestDay() {
 //        for (Map.Entry<Date, Submission> submission : this.canvasModel.getSubmissions().entrySet())
 //            System.out.println(submission);
+    }
+
+    public synchronized void registerDone() {
+        this.requestsBusy--;
+
+        if (this.requestsBusy == 0)
+            System.out.println("Ready to do stuff");
     }
 }
