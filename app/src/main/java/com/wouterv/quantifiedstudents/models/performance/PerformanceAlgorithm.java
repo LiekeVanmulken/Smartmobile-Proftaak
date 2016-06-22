@@ -17,6 +17,7 @@ public class PerformanceAlgorithm {
     private CanvasModel canvasModel;
     private FitbitModel fitbitModel;
 
+    private SmileyModel quickviewSmiley;
     private SmileyModel sleepSmiley;
     private SmileyModel stepSmiley;
 
@@ -34,6 +35,15 @@ public class PerformanceAlgorithm {
 
         this.sleepSmiley = sleepSmiley;
         this.stepSmiley = stepSmiley;
+
+        this.requestsBusy = 3;
+    }
+
+    public PerformanceAlgorithm(CanvasModel canvasModel, FitbitModel fitbitModel, SmileyModel quickviewSmiley) {
+        this.canvasModel = canvasModel;
+        this.fitbitModel = fitbitModel;
+
+        this.quickviewSmiley = quickviewSmiley;
 
         this.requestsBusy = 3;
     }
@@ -88,11 +98,29 @@ public class PerformanceAlgorithm {
         }
     }
 
+    public synchronized void registerOverviewDone() {
+        this.requestsBusy--;
+
+        if (this.requestsBusy == 0) {
+            this.calculateBestDay();
+            this.calculateCurrentDay();
+
+            this.calculateSleepRatio();
+            this.calculateStepRatio();
+
+            this.setOverviewMessage();
+        }
+    }
+
     private void setSleepMessage() {
         this.sleepSmiley.setSmiley(String.format("You have slept %d minutes. ", this.fitbitModel.getSleep(this.currentDate).getMinutesAsleep()), this.sleepRatio);
     }
 
     private void setStepMessage() {
         this.stepSmiley.setSmiley(String.format("You have currently set %d steps. ", this.fitbitModel.getActivity(this.currentDate).getSteps()), this.stepRatio);
+    }
+
+    private void setOverviewMessage() {
+        this.quickviewSmiley.setSmiley("", (this.stepRatio + this.sleepRatio) / 2d);
     }
 }

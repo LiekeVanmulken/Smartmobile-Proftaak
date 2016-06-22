@@ -22,9 +22,8 @@ import com.wouterv.quantifiedstudents.models.performance.PerformanceAlgorithm;
 import java.util.List;
 
 public class OverviewActivity extends AppCompatActivity {
-    private CanvasModel canvasModel;
-
     private CanvasDataRequester canvasDataRequester;
+    private CanvasModel canvasModel;
 
     private FitbitDataRequester fitbitDataRequester;
     private FitbitModel fitbitModel;
