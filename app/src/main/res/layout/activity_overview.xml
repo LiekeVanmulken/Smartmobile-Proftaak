@@ -18,7 +18,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="48dp"
                     android:paddingRight="16dp"
                     android:layout_marginBottom="24dp"
                     android:paddingLeft="16dp" >
@@ -27,21 +27,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/steps"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="50sp"
+                        android:textColor="@color/colorPrimary" />
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:id="@+id/currentStepsEmoji"
-                        android:layout_marginTop="32dp"
-                        android:layout_marginBottom="32dp" />
+                        android:layout_marginTop="48dp"
+                        android:layout_marginBottom="48dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/currentSteps"
                         android:layout_marginTop="16dp"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <View
@@ -63,21 +66,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/sleep"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="50sp"
+                        android:textColor="@color/colorPrimary" />
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:id="@+id/currentSleepEmoji"
-                        android:layout_marginTop="32dp"
-                        android:layout_marginBottom="32dp" />
+                        android:layout_marginTop="48dp"
+                        android:layout_marginBottom="48dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/currentSleep"
                         android:textAlignment="center"
-                        android:layout_marginTop="16dp" />
+                        android:layout_marginTop="16dp"
+                        android:textSize="20sp" />
                 </LinearLayout>
             </LinearLayout>
     </ScrollView>

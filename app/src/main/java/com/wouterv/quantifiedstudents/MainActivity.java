@@ -16,6 +16,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import com.wouterv.quantifiedstudents.entities.canvas.Course;
 import com.wouterv.quantifiedstudents.entities.fitbit.Activity;
 import com.wouterv.quantifiedstudents.entities.fitbit.Sleep;
+import com.wouterv.quantifiedstudents.entities.ui.EmotionText;
 import com.wouterv.quantifiedstudents.entities.ui.MessageEntity;
 import com.wouterv.quantifiedstudents.entities.ui.SmileyModel;
 import com.wouterv.quantifiedstudents.interfaces.fitbit.IAPIResult;
@@ -31,6 +32,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private SmileyModel quickViewModel;
+    private EmotionText emotionModel;
 
     private CanvasDataRequester canvasDataRequester;
     private CanvasModel canvasModel;
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        MessageEntity[] messages = new MessageEntity[] {
+        MessageEntity[] motivationMessages = new MessageEntity[] {
                 new MessageEntity(0, 0.25, "Don\'t abandon me!", R.drawable.crying_512px),
                 new MessageEntity(0.25, 0.7, "Can you do better? For me?", R.drawable.depression_512px),
                 new MessageEntity(0.7, 0.9, "So close!", R.drawable.happy_512px),
@@ -69,9 +71,20 @@ public class MainActivity extends AppCompatActivity {
                 new MessageEntity(1.75, Double.MAX_VALUE, "Don\'t abandon me!", R.drawable.crying_512px),
         };
 
-        this.quickViewModel = new SmileyModel((ImageView) this.findViewById(R.id.currentNyxEmoji), (TextView) this.findViewById(R.id.currentStatusText), messages);
+        MessageEntity[] emotionMessages = new MessageEntity[] {
+                new MessageEntity(0, 0.25, "very sad", Integer.MIN_VALUE),
+                new MessageEntity(0.25, 0.7, "sad", Integer.MIN_VALUE),
+                new MessageEntity(0.7, 0.9, "happy", Integer.MIN_VALUE),
+                new MessageEntity(0.9, 1.1, "verry happy", Integer.MIN_VALUE),
+                new MessageEntity(1.1, 1.3, "happy", Integer.MIN_VALUE),
+                new MessageEntity(1.3, 1.75, "sad", Integer.MIN_VALUE),
+                new MessageEntity(1.75, Double.MAX_VALUE, "very sad", Integer.MIN_VALUE),
+        };
 
-        this.performanceAlgorithm = new PerformanceAlgorithm(this.canvasModel, this.fitbitModel, this.quickViewModel);
+        this.emotionModel = new EmotionText((TextView) this.findViewById(R.id.currentNyxText), emotionMessages);
+        this.quickViewModel = new SmileyModel((ImageView) this.findViewById(R.id.currentNyxEmoji), (TextView) this.findViewById(R.id.currentStatusText), motivationMessages);
+
+        this.performanceAlgorithm = new PerformanceAlgorithm(this.canvasModel, this.fitbitModel, this.quickViewModel, this.emotionModel);
 
         this.fitbitDataRequester.getActivity(this, new IAPIResult() {
             @Override

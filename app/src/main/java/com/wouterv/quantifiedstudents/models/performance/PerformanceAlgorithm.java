@@ -1,6 +1,7 @@
 package com.wouterv.quantifiedstudents.models.performance;
 
 import com.wouterv.quantifiedstudents.entities.canvas.Course;
+import com.wouterv.quantifiedstudents.entities.ui.EmotionText;
 import com.wouterv.quantifiedstudents.entities.ui.SmileyModel;
 import com.wouterv.quantifiedstudents.models.canvas.CanvasModel;
 import com.wouterv.quantifiedstudents.models.canvas.MockCanvasModel;
@@ -20,6 +21,7 @@ public class PerformanceAlgorithm {
     private SmileyModel quickviewSmiley;
     private SmileyModel sleepSmiley;
     private SmileyModel stepSmiley;
+    private EmotionText emotionText;
 
     private int requestsBusy;
 
@@ -39,11 +41,12 @@ public class PerformanceAlgorithm {
         this.requestsBusy = 3;
     }
 
-    public PerformanceAlgorithm(CanvasModel canvasModel, FitbitModel fitbitModel, SmileyModel quickviewSmiley) {
+    public PerformanceAlgorithm(CanvasModel canvasModel, FitbitModel fitbitModel, SmileyModel quickviewSmiley, EmotionText emotionText) {
         this.canvasModel = canvasModel;
         this.fitbitModel = fitbitModel;
 
         this.quickviewSmiley = quickviewSmiley;
+        this.emotionText = emotionText;
 
         this.requestsBusy = 3;
     }
@@ -109,6 +112,7 @@ public class PerformanceAlgorithm {
             this.calculateStepRatio();
 
             this.setOverviewMessage();
+            this.setEmotionMessage();
         }
     }
 
@@ -122,5 +126,9 @@ public class PerformanceAlgorithm {
 
     private void setOverviewMessage() {
         this.quickviewSmiley.setSmiley("", (this.stepRatio + this.sleepRatio) / 2d);
+    }
+
+    private void setEmotionMessage() {
+        this.emotionText.setText("Your Nyx is ", (this.stepRatio + this.sleepRatio) / 2d);
     }
 }
